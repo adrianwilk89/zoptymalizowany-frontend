@@ -34,6 +34,11 @@
 
     <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>
 
+    <script>
+      document.fonts.ready.then(function() {
+        document.getElementsByTagName('html')[0].classList.add("fonts-loaded")
+      })
+    </script>
 
 
   </head>

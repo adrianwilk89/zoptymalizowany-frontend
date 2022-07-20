@@ -66,5 +66,13 @@
 	overflow-y: hidden;
 }
 
+html:not(.fonts-loaded) & {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	line-height: 1.6;
+	font-weight: 600;
+	letter-spacing: 0.65px;
+	word-spacing: 2px;
+}
+
 /* responsive */
 @import "rwd/responsive";
