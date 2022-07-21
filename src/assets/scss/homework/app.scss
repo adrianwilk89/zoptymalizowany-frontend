@@ -66,7 +66,7 @@
 	overflow-y: hidden;
 }
 
-html:not(.fonts-loaded) & {
+html:not(.fonts-loaded) {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.6;
 	font-weight: 600;
