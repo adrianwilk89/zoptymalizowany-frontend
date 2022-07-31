@@ -33,7 +33,13 @@
     <link href="/favicon.ico" rel="icon">
 
     <script>var media_url = '/assets/', site_url = '/';$(document).load().scrollTop(0);</script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+    <script>
+      var lazyLoadInstance = new LazyLoad({
+      // Your custom settings go here
+    });
+    
+    </script>
     <script>
       document.fonts.ready.then(function() {
         document.getElementsByTagName('html')[0].classList.add("fonts-loaded")
@@ -246,7 +252,7 @@
         <div class="layout">
           <h2 class="headline-2">Find out more</h2>
 
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/W9-dlonF1JE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" class="lazy" loading="lazy" data-src="https://www.youtube.com/embed/W9-dlonF1JE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -775,5 +781,8 @@
     </script>
     <!--End of Tawk.to Script-->
 
+    <script>
+      lazyLoadInstance.update();
+    </script>
   </body>
 </html>
