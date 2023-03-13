@@ -36,6 +36,7 @@ const gulp                      = require('gulp'),
       sass                      = require('gulp-sass')(require('sass')),
       purgecss                  = require('gulp-purgecss'),
       imagemin                  = require('gulp-imagemin'),
+      imageminWebp              = require('imagemin-webp'),
 
       src_folder                = './src/',
       src_assets_folder         = src_folder + 'assets/',
@@ -117,7 +118,7 @@ gulp.task('js-minified', () => {
 gulp.task('images', () => {
   return gulp.src([ src_assets_folder + 'images/**/*.+(png|jpg|jpeg|gif|svg|ico)' ], { since: gulp.lastRun('images') })
     .pipe(plumber())
-    .pipe(imagemin())
+    .pipe(imagemin([imageminWebp({quality: 99})]))
     .pipe(gulp.dest(dist_assets_folder + 'images'))
     .pipe(browserSync.stream());
 });
@@ -175,9 +176,9 @@ gulp.task('generate-critical-css', (cb) => {
   critical.generate({
     inline: true,
     base: dist_folder,
-    src: 'homework-homepage.html',
+    src: 'index.html',
     target: {
-      html: 'homework-homepage-critical.html',
+      html: 'index.html',
       css: 'critical.css',
     },
     width: 1300,
