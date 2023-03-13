@@ -45,7 +45,39 @@
         document.getElementsByTagName('html')[0].classList.add("fonts-loaded")
       })
     </script>
-
+    <link rel="preload" href="/assets/images/homework/banner-1920.png?tr=w-1920" media="(min-width: 1441px)" as="image">
+    <link rel="preload" href="/assets/images/homework/banner-1440.png?tr=w-1440" media="(min-width:1200px) and (max-width:1440px)" as="image">
+    <link rel="preload" href="/assets/images/homework/banner-1200.png?tr=w-1200" media="(min-width:1025px) and (max-width:1199px)" as="image">
+    <link rel="preload" href="/assets/images/homework/banner-1024.png?tr=w-1024" media="(min-width:768px) and (max-width:1024px)" as="image">
+    <style>
+      @media screen and (min-width:768px) and (max-width:1024px) {
+        .l-home-banner {
+          background-image: url('/assets/images/homework/banner-1024.png?tr=w-1024')
+        }
+      }
+  
+      @media screen and (min-width:1025px) and (max-width:1199px) {
+        .l-home-banner {
+          background-image: url('/assets/images/homework/banner-1200.png?tr=w-1200')
+        }
+      }
+  
+      @media screen and (min-width:1200px) and (max-width:1440px) {
+        .l-home-banner {
+          background-image: url('/assets/images/homework/banner-1440.png?tr=w-1440')
+        }
+      }
+  
+      @media screen and (min-width:1441px) {
+        .l-home-banner {
+          background-image: url('/assets/images/homework/banner-1920.png?tr=w-1920')
+        }
+      }
+      @media screen and (max-width: 1101px) {
+      footer > div.l-footer__top > div > div.col-15.left > a > picture > img {
+       display: none
+    }}
+    </style>
 
   </head>
   <body>
@@ -167,8 +199,7 @@
     </div>
 
     <header
-      class="l-home-banner"
-      style="background-image: url('/assets/images/homework/banner.png')">
+      class="l-home-banner">
       <div class="layout">
         <div class="home-banner__content text">
           <h1 class="headline-1">Seamless<br> payment option</h1>
